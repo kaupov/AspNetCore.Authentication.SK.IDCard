@@ -5,7 +5,7 @@
 **The first alpha release can be found on [NuGet](https://www.nuget.org/packages/AspNetCore.Authentication.SK.IdCard/1.0.0-alpha1)**.
 
 ## Getting started
-**Install live or demo SK root CA and intermediate certificates to your running computer or server from [SK site](https://www.skidsolutions.eu/repositoorium/sk-sertifikaadid/)**. They have to be installed in propriate stores or received user certifiactes are not validated.
+**Install SK root CA and intermediate certificates to your running computer or server from [SK site](https://www.skidsolutions.eu/repositoorium/sk-sertifikaadid/)**. They have to be installed in propriate stores or received user certifiactes are not validated.
 
 Authentication flow requires to redirect user to host that requires client certificate in TLS level. For that sample uses same application on different port, but it is also possible to use subdomain instead.
 

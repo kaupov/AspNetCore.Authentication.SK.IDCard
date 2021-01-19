@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <PackageId>AspNetCore.Authentication.SK.IdCard</PackageId>
+	  <Version>1.0.0-alpha1</Version>
+	  <PackageDescription>SK ID-card external authentication for ASP.NET Core applications.</PackageDescription>
+	  <PackageTags>sk;idcard;id-card;authentication</PackageTags>
+	  <Authors>kaupov</Authors>
+	  <Company>kaupov</Company>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageIcon>site_logo.png</PackageIcon>
+	  <RootNamespace>AspNetCore.Authentication.SK.IdCard</RootNamespace>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <Product>AspNetCore.Authentication.SK.IdCard</Product>
+	  <RepositoryUrl>https://github.com/kaupov/AspNetCore.Authentication.SK.IdCard</RepositoryUrl>
+	  <PackageProjectUrl>https://github.com/kaupov/AspNetCore.Authentication.SK.IdCard</PackageProjectUrl>
   </PropertyGroup>
 
 	<ItemGroup>
@@ -11,5 +24,9 @@
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.AspNetCore.Authentication.Certificate" Version="3.1.10" />
 	  <PackageReference Include="Rfc2253" Version="1.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="Images\site_logo.png" Pack="true" PackagePath="\"></None>
 	</ItemGroup>
 </Project>

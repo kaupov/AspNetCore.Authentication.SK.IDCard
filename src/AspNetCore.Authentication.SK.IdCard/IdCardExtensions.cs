@@ -13,10 +13,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Rfc2253;
 
-namespace AspNetCore.Authentication.SK.IdCard
+namespace AspNetCore.Authentication.SK.IDCard
 {
     public static class IdCardExtensions
     {
+        private const string IdCardAllowedOriginsPolicyName = "IdCardAllowedOrigins";
+
         public static AuthenticationBuilder AddIdCard(this AuthenticationBuilder builder) =>
             builder.AddIdCard(IdCardDefaults.AuthenticationScheme, _ => { });
 
@@ -58,18 +60,29 @@ namespace AspNetCore.Authentication.SK.IdCard
                 configureOptions);
         }
 
+        public static IServiceCollection AddIdCardAllowedOrigins(this IServiceCollection services, string[] allowedOrigins)
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(IdCardAllowedOriginsPolicyName, builder =>
+                {
+                    builder.WithOrigins(allowedOrigins).AllowCredentials();
+                });
+            });
+            return services;
+        }
+
         public static IApplicationBuilder UseIdCardAuthentication(this IApplicationBuilder builder) =>
             UseIdCardAuthentication(builder, IdCardDefaults.AuthenticationScheme);
 
         public static IApplicationBuilder UseIdCardAuthentication(this IApplicationBuilder builder, string authenticationScheme)
         {
+            builder.UseCors(IdCardAllowedOriginsPolicyName);
+
             builder.UseEndpoints(routeBuilder =>
             {
-                routeBuilder.Map(IdCardDefaults.AuthenticationRoute, context =>
+                routeBuilder.Map(IdCardDefaults.AuthenticationRoute, async context =>
                 {
-                    // Redirected here on authentication site by IdCardHandler
-                    var options = context.RequestServices.GetService<IOptionsMonitor<IdCardOptions>>();
-
                     var properties = new AuthenticationProperties();
                     properties.Items["LoginProvider"] = authenticationScheme;
 
@@ -83,16 +96,8 @@ namespace AspNetCore.Authentication.SK.IdCard
                     FindAndAddClaim(identity, name, ClaimTypes.SerialNumber, "SERIALNUMBER");
                     FindAndAddClaim(identity, name, ClaimTypes.Country, "C");
 
-                    context.SignInAsync(IdentityConstants.ExternalScheme, new ClaimsPrincipal(identity), properties);
-
-                    // Redirect user back to main site
-                    var mainSiteUri = new Uri(options.Get(authenticationScheme).MainSite);
-                    var redirect = UriHelper.BuildAbsolute(mainSiteUri.Scheme,
-                        new HostString(mainSiteUri.Host, mainSiteUri.Port), mainSiteUri.AbsolutePath,
-                        "/Identity/Account/ExternalLogin", QueryString.Create("handler", "Callback"));
-                    context.Response.Redirect(redirect);
-                    return Task.CompletedTask;
-                });
+                    await context.SignInAsync(IdentityConstants.ExternalScheme, new ClaimsPrincipal(identity), properties);
+                }).RequireCors(IdCardAllowedOriginsPolicyName);
             });
 
             return builder;

@@ -1,5 +1,5 @@
-using AspNetCore.Authentication.SK.IdCard.Sample.Data;
-using AspNetCore.Authentication.SK.IdCard.Sample.Models;
+using AspNetCore.Authentication.SK.IDCard.Sample.Data;
+using AspNetCore.Authentication.SK.IDCard.Sample.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,7 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace AspNetCore.Authentication.SK.IdCard.Sample
+namespace AspNetCore.Authentication.SK.IDCard.Sample
 {
     public class Startup
     {
@@ -43,6 +43,8 @@ namespace AspNetCore.Authentication.SK.IdCard.Sample
                     options.AuthenticationSite = "https://localhost:5002";
                 })
                 .AddIdentityServerJwt();
+
+            services.AddIdCardAllowedOrigins(new[] {"https://localhost:5001"});
 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -75,6 +77,8 @@ namespace AspNetCore.Authentication.SK.IdCard.Sample
 
             app.UseRouting();
 
+            app.UseIdCardAuthentication();
+
             app.UseAuthentication();
             app.UseIdentityServer();
             app.UseAuthorization();
@@ -85,8 +89,6 @@ namespace AspNetCore.Authentication.SK.IdCard.Sample
                     pattern: "{controller}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
-
-            app.UseIdCardAuthentication();
             
             app.UseSpa(spa =>
             {

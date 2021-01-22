@@ -1,4 +1,4 @@
-﻿namespace AspNetCore.Authentication.SK.IdCard
+﻿namespace AspNetCore.Authentication.SK.IDCard
 {
     public static class IdCardDefaults
     {

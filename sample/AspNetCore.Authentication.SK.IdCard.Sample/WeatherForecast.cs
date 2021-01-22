@@ -1,6 +1,6 @@
 using System;
 
-namespace AspNetCore.Authentication.SK.IdCard.Sample
+namespace AspNetCore.Authentication.SK.IDCard.Sample
 {
     public class WeatherForecast
     {

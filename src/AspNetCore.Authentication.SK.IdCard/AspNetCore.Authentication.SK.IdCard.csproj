@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-	  <PackageId>AspNetCore.Authentication.SK.IdCard</PackageId>
+	  <PackageId>AspNetCore.Authentication.SK.IDCard</PackageId>
 	  <Version>1.0.0-alpha1</Version>
 	  <PackageDescription>SK ID-card external authentication for ASP.NET Core applications.</PackageDescription>
 	  <PackageTags>sk;idcard;id-card;authentication</PackageTags>
@@ -10,11 +10,12 @@
 	  <Company>kaupov</Company>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <PackageIcon>site_logo.png</PackageIcon>
-	  <RootNamespace>AspNetCore.Authentication.SK.IdCard</RootNamespace>
+	  <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+	  <RootNamespace>AspNetCore.Authentication.SK.IDCard</RootNamespace>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	  <Product>AspNetCore.Authentication.SK.IdCard</Product>
-	  <RepositoryUrl>https://github.com/kaupov/AspNetCore.Authentication.SK.IdCard</RepositoryUrl>
-	  <PackageProjectUrl>https://github.com/kaupov/AspNetCore.Authentication.SK.IdCard</PackageProjectUrl>
+	  <Product>AspNetCore.Authentication.SK.IDCard</Product>
+	  <RepositoryUrl>https://github.com/kaupov/AspNetCore.Authentication.SK.IDCard</RepositoryUrl>
+	  <PackageProjectUrl>https://github.com/kaupov/AspNetCore.Authentication.SK.IDCard</PackageProjectUrl>
   </PropertyGroup>
 
 	<ItemGroup>

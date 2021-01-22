@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AspNetCore.Authentication.SK.IdCard.Sample.Controllers
+namespace AspNetCore.Authentication.SK.IDCard.Sample.Controllers
 {
     [Authorize]
     [ApiController]

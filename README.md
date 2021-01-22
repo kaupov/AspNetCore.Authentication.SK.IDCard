@@ -1,8 +1,8 @@
-# AspNetCore.Authentication.SK.IdCard
+# AspNetCore.Authentication.SK.IDCard
 
-**AspNetCore.Authentication.SK.IdCard** is a ID-card security middleware that you can use in your **ASP.NET Core** application to support SK ID-card authentication. It is inspired by **[Microsoft Certificate authentication](https://github.com/dotnet/aspnetcore/tree/master/src/Security/Authentication/Certificate)**. It is not perfect, but functional as external authentication.
+**AspNetCore.Authentication.SK.IDCard** is a ID-card security middleware that you can use in your **ASP.NET Core** application to support SK ID-card authentication. It is inspired by **[Microsoft Certificate authentication](https://github.com/dotnet/aspnetcore/tree/master/src/Security/Authentication/Certificate)**. It is not perfect, but functional as external authentication.
 
-**The first alpha release can be found on [NuGet](https://www.nuget.org/packages/AspNetCore.Authentication.SK.IdCard/1.0.0-alpha1)**.
+**The latest alpha release can be found on [NuGet](https://www.nuget.org/packages/AspNetCore.Authentication.SK.IDCard)**.
 
 ## Getting started
 **Install SK root CA and intermediate certificates to your running computer or server from [SK site](https://www.skidsolutions.eu/repositoorium/sk-sertifikaadid/)**. They have to be installed in propriate stores or received user certifiactes are not validated.
@@ -50,4 +50,4 @@ public void Configure(IApplicationBuilder app)
     app.UseIdCardAuthentication();
 }
 ```
-See the [/sample](https://github.com/kaupov/AspNetCore.Authentication.SK.IdCard/tree/main/sample) directory for a complete sample **using ASP.NET Core MVC**.
+See the [/sample](https://github.com/kaupov/AspNetCore.Authentication.SK.IDCard/tree/main/sample) directory for a complete sample **using ASP.NET Core MVC**.

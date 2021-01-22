@@ -1,5 +1,5 @@
-using AspNetCore.Authentication.SK.IdCard.Sample.Data;
-using AspNetCore.Authentication.SK.IdCard.Sample.Models;
+using AspNetCore.Authentication.SK.IDCard.Sample.Data;
+using AspNetCore.Authentication.SK.IDCard.Sample.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,7 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace AspNetCore.Authentication.SK.IdCard.Sample
+namespace AspNetCore.Authentication.SK.IDCard.Sample
 {
     public class Startup
     {

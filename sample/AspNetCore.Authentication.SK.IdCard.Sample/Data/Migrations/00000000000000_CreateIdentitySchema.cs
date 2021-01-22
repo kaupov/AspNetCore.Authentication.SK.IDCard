@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace AspNetCore.Authentication.SK.IdCard.Sample.Data.Migrations
+namespace AspNetCore.Authentication.SK.IDCard.Sample.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace AspNetCore.Authentication.SK.IdCard
+namespace AspNetCore.Authentication.SK.IDCard
 {
     public class IdCardHandler : AuthenticationHandler<IdCardOptions>
     {

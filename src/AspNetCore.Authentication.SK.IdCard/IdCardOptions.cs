@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 
-namespace AspNetCore.Authentication.SK.IdCard
+namespace AspNetCore.Authentication.SK.IDCard
 {
     public class IdCardOptions : AuthenticationSchemeOptions
     {

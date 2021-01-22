@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Server.Kestrel.Https;
 
-namespace AspNetCore.Authentication.SK.IdCard.Sample
+namespace AspNetCore.Authentication.SK.IDCard.Sample
 {
     public class Program
     {

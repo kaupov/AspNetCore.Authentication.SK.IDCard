@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Options;
 
-namespace AspNetCore.Authentication.SK.IdCard.Areas.Identity.Pages.Account
+namespace AspNetCore.Authentication.SK.IDCard.Areas.Identity.Pages.Account
 {
     public class IdCardAuthenticationModel : PageModel
     {

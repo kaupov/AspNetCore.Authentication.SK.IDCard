@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Rfc2253;
 
-namespace AspNetCore.Authentication.SK.IdCard
+namespace AspNetCore.Authentication.SK.IDCard
 {
     public static class IdCardExtensions
     {

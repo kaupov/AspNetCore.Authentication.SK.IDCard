@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Authentication.SK.IdCard", "src\AspNetCore.Authentication.SK.IdCard\AspNetCore.Authentication.SK.IdCard.csproj", "{69934456-4DB1-4939-8B13-DDA6DFA6B657}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Authentication.SK.IDCard", "src\AspNetCore.Authentication.SK.IDCard\AspNetCore.Authentication.SK.IDCard.csproj", "{69934456-4DB1-4939-8B13-DDA6DFA6B657}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Authentication.SK.IdCard.Sample", "sample\AspNetCore.Authentication.SK.IdCard.Sample\AspNetCore.Authentication.SK.IdCard.Sample.csproj", "{436631E9-F409-4DA7-ACB8-A580C22B124F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Authentication.SK.IDCard.Sample", "sample\AspNetCore.Authentication.SK.IDCard.Sample\AspNetCore.Authentication.SK.IDCard.Sample.csproj", "{436631E9-F409-4DA7-ACB8-A580C22B124F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B18A061C-001B-4211-A612-254E116F1E52}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

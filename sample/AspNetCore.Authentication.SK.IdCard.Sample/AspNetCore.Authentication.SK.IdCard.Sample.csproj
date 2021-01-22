@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AspNetCore.Authentication.SK.IdCard\AspNetCore.Authentication.SK.IdCard.csproj" />
+    <ProjectReference Include="..\..\src\AspNetCore.Authentication.SK.IDCard\AspNetCore.Authentication.SK.IDCard.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

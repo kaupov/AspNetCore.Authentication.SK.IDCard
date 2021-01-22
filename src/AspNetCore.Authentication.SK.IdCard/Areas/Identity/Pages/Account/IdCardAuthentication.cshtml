@@ -1,0 +1,44 @@
+﻿@page
+@model IdCardAuthenticationModel
+@{
+    ViewData["Title"] = "ID-card authentication";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p id="id-card-progress">Authenticating with ID-card...</p>
+<div id="id-card-error" class="alert alert-danger" role="alert">
+    <p>Authentication failed. Please make sure your ID-card reader is connected to your computer and your ID-card is properly in reader.</p>
+    <button id="id-card-retry" class="btn btn-primary">Retry</button>
+</div>
+
+<script>
+    function authenticateIdCard () {
+        var progressElement = document.querySelector('#id-card-progress');
+        var errorElement = document.querySelector('#id-card-error');
+
+        progressElement.classList.remove('d-none');
+        errorElement.classList.add('d-none');
+
+        const xhr = new XMLHttpRequest();
+        xhr.onload = function() {
+            if (this.readyState === 4) {
+                window.location.replace('@Model.MainSite/Identity/Account/ExternalLogin?handler=Callback');
+            }
+        };
+        xhr.onerror = function () {
+            errorElement.classList.remove('d-none');
+            progressElement.classList.add('d-none');
+        };
+        xhr.open('GET', '@Model.AuthenticationSite/.id-card/auth', true);
+        xhr.withCredentials = true;
+        xhr.send();
+    }
+
+    var element = document.querySelector('#id-card-retry');
+    element.onclick = function () {
+        authenticateIdCard();
+    };
+
+    authenticateIdCard();
+</script>

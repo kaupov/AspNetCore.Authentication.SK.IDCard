@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
 	  <PackageId>AspNetCore.Authentication.SK.IDCard</PackageId>
-	  <Version>1.0.0-alpha1</Version>
+	  <Version>1.0.0-alpha2</Version>
 	  <PackageDescription>SK ID-card external authentication for ASP.NET Core applications.</PackageDescription>
 	  <PackageTags>sk;idcard;id-card;authentication</PackageTags>
 	  <Authors>kaupov</Authors>
